@@ -30,10 +30,6 @@
     };
 };
 
-&default_transform {
-    col-offset = <6>;
-};
-
 &bt_unpair_combo {
     key-positions = <11 54>;
 };
