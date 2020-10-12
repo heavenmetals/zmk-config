@@ -33,7 +33,6 @@
         ;
         
     };
-}
 
 &right_encoder {
     status = "okay";
@@ -42,5 +41,3 @@
 &bt_unpair_combo {
     key-positions = <11 54>;
 };
-
-Message #help
