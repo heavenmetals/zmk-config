@@ -6,7 +6,7 @@
 
 #include "lily58.dtsi"
 
-	&kscan0: kscan {
+	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		label = "KSCAN";
 
