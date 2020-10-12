@@ -6,32 +6,34 @@
 
 #include "lily58.dtsi"
 
-	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-matrix";
-		label = "KSCAN";
-
-		diode-direction = "col2row";
-		row-gpios
-			= <&pro_micro_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			;
-		
-	};
-
-&kscan0 {
-	col-gpios
-		= <&pro_micro_a  1 GPIO_ACTIVE_HIGH>
-		, <&pro_micro_a  0 GPIO_ACTIVE_HIGH>
-		, <&pro_micro_d 15 GPIO_ACTIVE_HIGH>
-		, <&pro_micro_d 14 GPIO_ACTIVE_HIGH>
-		, <&pro_micro_d 16 GPIO_ACTIVE_HIGH>
-		, <&pro_micro_d 10 GPIO_ACTIVE_HIGH>
-		;
+&default_transform {
+    col-offset = <6>;
 };
 
+/ {
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+
+        diode-direction = "col2row";
+        row-gpios
+            = <&pro_micro_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+                col-gpios
+        = <&pro_micro_d 10 GPIO_ACTIVE_HIGH>
+        , <&pro_micro_d 16 GPIO_ACTIVE_HIGH>
+        , <&pro_micro_d 14 GPIO_ACTIVE_HIGH>
+        , <&pro_micro_d 15 GPIO_ACTIVE_HIGH>
+        , <&pro_micro_a  0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro_a  1 GPIO_ACTIVE_HIGH>
+        ;
+        
+    };
+
 &bt_unpair_combo {
-	key-positions = <0 53>;
+    key-positions = <11 54>;
 };
